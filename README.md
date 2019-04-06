@@ -29,7 +29,7 @@ BSD 3-Clause License
 
 - enc28j60 (SPI) + lwip。
 
-## 2、如何打开 rosserial
+### 2、如何打开 rosserial
 
 使用 rosserial package 需要在 RT-Thread 的包管理器中选择它，具体路径如下：
 
@@ -37,9 +37,9 @@ BSD 3-Clause License
     	peripheral libraries and drivers --->
         	[*] rosserial: a protocol for Robots Operating System (ROS)
 
-## 3、使用 rosserial
+### 3、使用 rosserial
 
-### 1. 安装 ROS
+#### 3.1 安装 ROS
 
 首先需要一个比较强劲的CPU用来运行 ROS 的主节点，例如 PC 或者 ARM ，安装过程可以参照 ROS 的[官网](http://wiki.ros.org/ROS/Installation)，现在官方支持最好的还是 Debian 系列。
 
@@ -63,13 +63,13 @@ BSD 3-Clause License
 	echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 	source ~/.bashrc
 
-### 2. 启动 ROS
+#### 3.2 启动 ROS
 
 首先启动一个主节点：
 
 	roscore
 
-### 3. 建立连接
+#### 3.3 建立连接
 
 如果使用的串口：
 
@@ -79,7 +79,7 @@ BSD 3-Clause License
 
 	rosrun rosserial_python serial_node.py tcp
 
-#### 4. 订阅话题
+#### 3.4 订阅话题
 
 以 hello world 为例：
 
