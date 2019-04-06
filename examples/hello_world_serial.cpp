@@ -24,6 +24,14 @@ static void rosserial_thread_entry(void *parameter)
 static void rosserial_hello_world_serial_example(int argc,char *argv[])
 {
     rt_thread_t thread = rt_thread_create("rosserial", rosserial_thread_entry, RT_NULL, 1024, 25, 10);
-    rt_thread_startup(thread);
+    if(thread != RT_NULL)
+    {
+        rt_thread_startup(thread);
+        rt_kprintf("[rosserial] New thread rosserial\n");
+    }
+    else
+    {
+        rt_kprintf("[rosserial] Failed to create thread rosserial\n");
+    }
 }
 MSH_CMD_EXPORT(rosserial_hello_world_serial_example, roserial hello world example with UART);
