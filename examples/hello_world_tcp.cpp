@@ -10,6 +10,10 @@ static char hello_msg[13] = "hello world!";
 
 static void rosserial_thread_entry(void *parameter)
 {
+    // Please make sure you have network connection first
+    // Set ip address and port
+    nh.getHardware()->setConnection("192.168.1.210", 11411);
+
     nh.initNode();
     nh.advertise(chatter);
 
@@ -21,9 +25,9 @@ static void rosserial_thread_entry(void *parameter)
             chatter.publish( &str_msg );
         } 
         /*
-        else 	
+        else 
         {
-            rt_kprintf("[rosserial] Not Connected");
+            rt_kprintf("[rosserial] Not Connected \n");
         }
         */
         nh.spinOnce();
@@ -31,7 +35,7 @@ static void rosserial_thread_entry(void *parameter)
     }
 }
 
-static void rosserial_hello_world_serial_example(int argc,char *argv[])
+static void rosserial_hello_world_tcp_example(int argc,char *argv[])
 {
     rt_thread_t thread = rt_thread_create("rosserial", rosserial_thread_entry, RT_NULL, 1024, 25, 10);
     if(thread != RT_NULL)
@@ -44,4 +48,4 @@ static void rosserial_hello_world_serial_example(int argc,char *argv[])
         rt_kprintf("[rosserial] Failed to create thread rosserial\n");
     }
 }
-MSH_CMD_EXPORT(rosserial_hello_world_serial_example, roserial hello world example with UART);
+MSH_CMD_EXPORT(rosserial_hello_world_tcp_example, roserial hello world example with TCP);

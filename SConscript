@@ -15,6 +15,9 @@ LOCAL_CCFLAGS = ''
 if GetDepend('ROSSERIAL_USING_HELLO_WORLD_UART'):
 	src    += Glob('examples/hello_world_serial.cpp')
 
+if GetDepend('ROSSERIAL_USING_HELLO_WORLD_TCP'):
+	src    += Glob('examples/hello_world_tcp.cpp')
+
 if rtconfig.CROSS_TOOL == 'gcc':
     LOCAL_CCFLAGS += ' -std=c99'
 
