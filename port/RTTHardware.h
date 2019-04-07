@@ -3,7 +3,9 @@
 #include <rtthread.h>
 #include <rtdevice.h>
 
-#define RTT_ROSSERIAL_DEVICE_NAME "uart2"
+#ifndef ROSSERIAL_UART_NAME
+	#define ROSSERIAL_UART_NAME "uart2"
+#endif
 
 static rt_device_t serial;
 static struct rt_semaphore rx_sem;
@@ -18,7 +20,7 @@ class RTTHardware {
   public:
     RTTHardware() {
       baud_ = BAUD_RATE_57600;
-      deviceName_ = RTT_ROSSERIAL_DEVICE_NAME;
+      deviceName_ = ROSSERIAL_UART_NAME;
     }
 
     RTTHardware(RTTHardware& h){
