@@ -85,7 +85,7 @@ public:
     }
 
     unsigned long time() {
-        return ((unsigned long)rt_tick_get() / RT_TICK_PER_SECOND * 1000);
+        return ((unsigned long)rt_tick_get() * 1000 / RT_TICK_PER_SECOND);
     }
 
 protected:
