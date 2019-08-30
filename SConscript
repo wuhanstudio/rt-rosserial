@@ -21,6 +21,6 @@ if GetDepend('ROSSERIAL_USING_HELLO_WORLD_TCP'):
 if rtconfig.CROSS_TOOL == 'gcc':
     LOCAL_CCFLAGS += ' -std=c99'
 
-group = DefineGroup('ROSSERIAL', src, depend = ['PKG_USING_ROSSERIAL'], CPPPATH = path, LOCAL_CCFLAGS = LOCAL_CCFLAGS)
+group = DefineGroup('rosserial', src, depend = ['PKG_USING_ROSSERIAL'], CPPPATH = path, LOCAL_CCFLAGS = LOCAL_CCFLAGS)
 
 Return('group')
