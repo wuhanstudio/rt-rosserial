@@ -1,6 +1,9 @@
 ![](doc/rosorg.png)
 
 ### 1. ROS 介绍
+
+> 这个分支是 Melodic，Kinetic 分支可以查看这里 [Kinetic 分支](https://github.com/wuhanstudio/rt-rosserial/tree/kinetic)
+
 **机器人操作系统 ROS** (Robots Operating System) 最早是斯坦福大学的一个软件框架，现在不管是工业机器人，还是娱乐用的机器人都运行着 ROS。
 
 ![robots](doc/ros.png)
