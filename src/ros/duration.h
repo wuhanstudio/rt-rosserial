@@ -54,16 +54,16 @@ public:
     normalizeSecNSecSigned(sec, nsec);
   }
 
+  double round(double r)
+  {
+    return (r > 0.0) ? floor(r + 0.5) : ceil(r - 0.5);
+  }
+
   double toSec() const
   {
     return (double)sec + 1e-9 * (double)nsec;
   };
-	
-	double round(double r)
-	{
-    return (r > 0.0) ? floor(r + 0.5) : ceil(r - 0.5);
-	}
-	
+
   void fromSec(double t)
   {
     sec = (uint32_t) floor(t);
