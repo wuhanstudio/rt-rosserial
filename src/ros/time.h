@@ -63,7 +63,7 @@ public:
   {
     return (double)sec + 1e-9 * (double)nsec;
   };
-	
+
   void fromSec(double t)
   {
     sec = (uint32_t) floor(t);
