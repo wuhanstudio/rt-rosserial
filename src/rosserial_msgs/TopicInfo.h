@@ -121,8 +121,8 @@ namespace rosserial_msgs
      return offset;
     }
 
-    const char * getType(){ return "rosserial_msgs/TopicInfo"; };
-    const char * getMD5(){ return "0ad51f88fc44892f8c10684077646005"; };
+    virtual const char * getType(){ return "rosserial_msgs/TopicInfo"; };
+    virtual const char * getMD5(){ return "0ad51f88fc44892f8c10684077646005"; };
 
   };
 

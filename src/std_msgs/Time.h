@@ -53,8 +53,8 @@ namespace std_msgs
      return offset;
     }
 
-    const char * getType(){ return "std_msgs/Time"; };
-    const char * getMD5(){ return "cd7166c74c552c311fbcc2fe5a7bc289"; };
+    virtual const char * getType(){ return "std_msgs/Time"; };
+    virtual const char * getMD5(){ return "cd7166c74c552c311fbcc2fe5a7bc289"; };
 
   };
 

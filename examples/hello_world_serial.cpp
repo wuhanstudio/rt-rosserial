@@ -45,3 +45,18 @@ static void rosserial_hello_world_serial_example(int argc,char *argv[])
     }
 }
 MSH_CMD_EXPORT(rosserial_hello_world_serial_example, roserial hello world example with UART);
+
+
+// If you are using Keil, you can ignore everything below
+
+// This is required
+// If you'd like to compile with scons which uses arm-none-eabi-gcc
+extern "C" void __cxa_pure_virtual()
+{
+  while (1);
+}
+
+// Moreover, you need to add:
+// CXXFLAGS = CFLAGS + ' -fno-rtti'
+// in rtconfig.py for arm-none-eabi-gcc
+

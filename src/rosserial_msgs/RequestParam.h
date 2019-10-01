@@ -47,8 +47,8 @@ static const char REQUESTPARAM[] = "rosserial_msgs/RequestParam";
      return offset;
     }
 
-    const char * getType(){ return REQUESTPARAM; };
-    const char * getMD5(){ return "c1f3d28f1b044c871e6eff2e9fc3c667"; };
+    virtual const char * getType(){ return REQUESTPARAM; };
+    virtual const char * getMD5(){ return "c1f3d28f1b044c871e6eff2e9fc3c667"; };
 
   };
 
@@ -197,8 +197,8 @@ static const char REQUESTPARAM[] = "rosserial_msgs/RequestParam";
      return offset;
     }
 
-    const char * getType(){ return REQUESTPARAM; };
-    const char * getMD5(){ return "9f0e98bda65981986ddf53afa7a40e49"; };
+    virtual const char * getType(){ return REQUESTPARAM; };
+    virtual const char * getMD5(){ return "9f0e98bda65981986ddf53afa7a40e49"; };
 
   };
 
