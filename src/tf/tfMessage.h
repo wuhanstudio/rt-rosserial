@@ -55,8 +55,8 @@ namespace tf
      return offset;
     }
 
-    const char * getType(){ return "tf/tfMessage"; };
-    const char * getMD5(){ return "94810edda583a504dfda3829e70d7eec"; };
+    virtual const char * getType(){ return "tf/tfMessage"; };
+    virtual const char * getMD5(){ return "94810edda583a504dfda3829e70d7eec"; };
 
   };
 

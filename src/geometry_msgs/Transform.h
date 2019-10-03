@@ -41,8 +41,8 @@ namespace geometry_msgs
      return offset;
     }
 
-    const char * getType(){ return "geometry_msgs/Transform"; };
-    const char * getMD5(){ return "ac9eff44abf714214112b05d54a3cf9b"; };
+    virtual const char * getType(){ return "geometry_msgs/Transform"; };
+    virtual const char * getMD5(){ return "ac9eff44abf714214112b05d54a3cf9b"; };
 
   };
 

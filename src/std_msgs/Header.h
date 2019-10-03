@@ -83,8 +83,8 @@ namespace std_msgs
      return offset;
     }
 
-    const char * getType(){ return "std_msgs/Header"; };
-    const char * getMD5(){ return "2176decaecbce78abc3b96ef049fabed"; };
+    virtual const char * getType(){ return "std_msgs/Header"; };
+    virtual const char * getMD5(){ return "2176decaecbce78abc3b96ef049fabed"; };
 
   };
 

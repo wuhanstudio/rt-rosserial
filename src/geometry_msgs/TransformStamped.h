@@ -58,8 +58,8 @@ namespace geometry_msgs
      return offset;
     }
 
-    const char * getType(){ return "geometry_msgs/TransformStamped"; };
-    const char * getMD5(){ return "b5764a33bfeb3588febc2682852579b0"; };
+    virtual const char * getType(){ return "geometry_msgs/TransformStamped"; };
+    virtual const char * getMD5(){ return "b5764a33bfeb3588febc2682852579b0"; };
 
   };
 

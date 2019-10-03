@@ -30,6 +30,9 @@ if GetDepend('ROSSERIAL_USING_PUB_SUB_UART'):
 if GetDepend('ROSSERIAL_USING_LOGGING_UART'):
     src    += Glob('examples/logging.cpp')
 
+if GetDepend('ROSSERIAL_USING_TF_UART'):
+    src    += Glob('examples/tf.cpp')
+
 if GetDepend('ROSSERIAL_USING_HELLO_WORLD_TCP'):
     src    += Glob('examples/hello_world_tcp.cpp')
 
