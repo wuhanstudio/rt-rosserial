@@ -21,6 +21,9 @@ if GetDepend('ROSSERIAL_USING_BLINK_UART'):
 if GetDepend('ROSSERIAL_USING_BLINK_CLASS_UART'):
     src    += Glob('examples/blink_class.cpp')
 
+if GetDepend('ROSSERIAL_USING_BUTTON_UART'):
+    src    += Glob('examples/button.cpp')
+
 if GetDepend('ROSSERIAL_USING_HELLO_WORLD_TCP'):
     src    += Glob('examples/hello_world_tcp.cpp')
 
