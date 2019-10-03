@@ -33,6 +33,12 @@ if GetDepend('ROSSERIAL_USING_LOGGING_UART'):
 if GetDepend('ROSSERIAL_USING_TF_UART'):
     src    += Glob('examples/tf.cpp')
 
+if GetDepend('ROSSERIAL_USING_SERVICE_SERVER_UART'):
+    src    += Glob('examples/service_server.cpp')
+
+if GetDepend('ROSSERIAL_USING_SERVICE_CLIENT_UART'):
+    src    += Glob('examples/service_client.cpp')
+
 if GetDepend('ROSSERIAL_USING_HELLO_WORLD_TCP'):
     src    += Glob('examples/hello_world_tcp.cpp')
 
