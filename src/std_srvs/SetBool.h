@@ -48,8 +48,8 @@ static const char SETBOOL[] = "std_srvs/SetBool";
      return offset;
     }
 
-    const char * getType(){ return SETBOOL; };
-    const char * getMD5(){ return "8b94c1b53db61fb6aed406028ad6332a"; };
+    virtual const char * getType(){ return SETBOOL; };
+    virtual const char * getMD5(){ return "8b94c1b53db61fb6aed406028ad6332a"; };
 
   };
 
@@ -108,8 +108,8 @@ static const char SETBOOL[] = "std_srvs/SetBool";
      return offset;
     }
 
-    const char * getType(){ return SETBOOL; };
-    const char * getMD5(){ return "937c9679a518e3a18d831e57125ea522"; };
+    virtual const char * getType(){ return SETBOOL; };
+    virtual const char * getMD5(){ return "937c9679a518e3a18d831e57125ea522"; };
 
   };
 
