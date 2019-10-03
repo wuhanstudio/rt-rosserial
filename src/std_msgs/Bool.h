@@ -47,8 +47,8 @@ namespace std_msgs
      return offset;
     }
 
-    const char * getType(){ return "std_msgs/Bool"; };
-    const char * getMD5(){ return "8b94c1b53db61fb6aed406028ad6332a"; };
+    virtual const char * getType(){ return "std_msgs/Bool"; };
+    virtual const char * getMD5(){ return "8b94c1b53db61fb6aed406028ad6332a"; };
 
   };
 
