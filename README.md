@@ -80,4 +80,4 @@
 
 * 维护：Wu Han
 * 主页：http://wuhanstudio.cc
-* 邮箱：https://github.com/wuhanstudio/rt-rosserial/issues
+* 联系：https://github.com/wuhanstudio/rt-rosserial/issues
