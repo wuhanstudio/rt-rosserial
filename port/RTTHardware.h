@@ -62,7 +62,7 @@ class RTTHardware {
         int read() {
             rt_uint8_t ch;
             if(rt_device_read(serial, -1, &ch, 1) != 1) {
-                rt_sem_take(&rx_sem, RT_TICK_PER_SECOND);
+                rt_sem_take(&rx_sem, 0);
                 if(rt_device_read(serial, -1, &ch, 1) != 1) {
                     return -1;
                 }
