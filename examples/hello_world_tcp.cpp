@@ -12,7 +12,7 @@ static void rosserial_thread_entry(void *parameter)
 {
     // Please make sure you have network connection first
     // Set ip address and port
-    nh.getHardware()->setConnection("192.168.1.210", 11411);
+    nh.getHardware()->setConnection("192.168.12.1", 11411);
 
     nh.initNode();
     nh.advertise(chatter);

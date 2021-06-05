@@ -54,16 +54,10 @@ public:
     normalizeSecNSec(sec, nsec);
   }
 
-  double round(double r)
-  {
-    return (r > 0.0) ? floor(r + 0.5) : ceil(r - 0.5);
-  }
-
   double toSec() const
   {
     return (double)sec + 1e-9 * (double)nsec;
   };
-
   void fromSec(double t)
   {
     sec = (uint32_t) floor(t);
@@ -78,6 +72,7 @@ public:
 
   Time& operator +=(const Duration &rhs);
   Time& operator -=(const Duration &rhs);
+  Duration operator -(const Time &rhs) const;
 
   static Time now();
   static void setNow(Time & new_now);
