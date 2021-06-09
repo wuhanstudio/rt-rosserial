@@ -44,7 +44,7 @@ public:
         server_addr.sin_addr = *((struct in_addr *)host->h_addr);
         rt_memset(&(server_addr.sin_zero), 0, sizeof(server_addr.sin_zero));
 
-        // Receive timout
+        // Receive timeout
         struct timeval recv_timeout;
         recv_timeout.tv_sec =    0;
         recv_timeout.tv_usec = ROSSERIAL_TCP_RECV_TIMEOUT;
