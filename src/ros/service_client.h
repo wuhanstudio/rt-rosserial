@@ -54,7 +54,7 @@ public:
     this->waiting = true;
   }
 
-  virtual void call(const MReq & request, MRes & response) override
+  virtual void call(const MReq & request, MRes & response)
   {
     if (!pub.nh_->connected()) return;
     ret = &response;
@@ -65,20 +65,20 @@ public:
   }
 
   // these refer to the subscriber
-  virtual void callback(unsigned char *data) override
+  virtual void callback(unsigned char *data)
   {
     ret->deserialize(data);
     waiting = false;
   }
-  virtual const char * getMsgType() override
+  virtual const char * getMsgType()
   {
     return this->resp.getType();
   }
-  virtual const char * getMsgMD5() override
+  virtual const char * getMsgMD5()
   {
     return this->resp.getMD5();
   }
-  virtual int getEndpointType() override
+  virtual int getEndpointType()
   {
     return rosserial_msgs::TopicInfo::ID_SERVICE_CLIENT + rosserial_msgs::TopicInfo::ID_SUBSCRIBER;
   }

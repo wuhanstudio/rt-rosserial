@@ -104,22 +104,22 @@ template<class Hardware,
 class NodeHandle_ : public NodeHandleBase_
 {
 protected:
-  Hardware hardware_{};
+  Hardware hardware_;
 
   /* time used for syncing */
-  uint32_t rt_time{0};
+  uint32_t rt_time;
 
   /* used for computing current time */
-  uint32_t sec_offset{0}, nsec_offset{0};
+  uint32_t sec_offset, nsec_offset;
 
   /* Spinonce maximum work timeout */
-  uint32_t spin_timeout_{0};
+  uint32_t spin_timeout_;
 
-  uint8_t message_in[INPUT_SIZE] = {0};
-  uint8_t message_out[OUTPUT_SIZE] = {0};
+  uint8_t message_in[INPUT_SIZE];
+  uint8_t message_out[OUTPUT_SIZE];
 
-  Publisher * publishers[MAX_PUBLISHERS] = {nullptr};
-  Subscriber_ * subscribers[MAX_SUBSCRIBERS] {nullptr};
+  Publisher * publishers[MAX_PUBLISHERS];
+  Subscriber_ * subscribers[MAX_SUBSCRIBERS];
 
   /*
    * Setup Functions
@@ -165,18 +165,18 @@ public:
 
 protected:
   // State machine variables for spinOnce
-  int mode_{0};
-  int bytes_{0};
-  int topic_{0};
-  int index_{0};
-  int checksum_{0};
+  int mode_;
+  int bytes_;
+  int topic_;
+  int index_;
+  int checksum_;
 
-  bool configured_{false};
+  bool configured_;
 
   /* used for syncing the time */
-  uint32_t last_sync_time{0};
-  uint32_t last_sync_receive_time{0};
-  uint32_t last_msg_timeout_time{0};
+  uint32_t last_sync_time;
+  uint32_t last_sync_receive_time;
+  uint32_t last_msg_timeout_time;
 
 public:
   /* This function goes in your loop() function, it handles
@@ -184,7 +184,7 @@ public:
    */
 
 
-  virtual int spinOnce() override
+  virtual int spinOnce() 
   {
     /* restart if timed out */
     uint32_t c_time = hardware_.time();
@@ -335,7 +335,7 @@ public:
 
 
   /* Are we connected to the PC? */
-  virtual bool connected() override
+  virtual bool connected() 
   {
     return configured_;
   };
@@ -466,7 +466,7 @@ public:
     configured_ = true;
   }
 
-  virtual int publish(int id, const Msg * msg) override
+  virtual int publish(int id, const Msg * msg) 
   {
     if (id >= 100 && !configured_)
       return 0;
@@ -542,8 +542,8 @@ public:
    */
 
 protected:
-  bool param_received{false};
-  rosserial_msgs::RequestParamResponse req_param_resp{};
+  bool param_received;
+  rosserial_msgs::RequestParamResponse req_param_resp;
 
   bool requestParam(const char * name, int time_out =  1000)
   {

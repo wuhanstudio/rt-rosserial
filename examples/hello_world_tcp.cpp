@@ -12,7 +12,7 @@ static void rosserial_thread_entry(void *parameter)
 {
     // Please make sure you have network connection first
     // Set ip address and port
-    nh.getHardware()->setConnection("192.168.12.1", 11411);
+    nh.getHardware()->setConnection("192.168.199.100", 11411);
 
     nh.initNode();
     nh.advertise(chatter);
@@ -37,7 +37,7 @@ static void rosserial_thread_entry(void *parameter)
 
 static void rosserial_hello_world_tcp_example(int argc,char *argv[])
 {
-    rt_thread_t thread = rt_thread_create("rosserial", rosserial_thread_entry, RT_NULL, 1024, 25, 10);
+    rt_thread_t thread = rt_thread_create("rosserial", rosserial_thread_entry, RT_NULL, 2048, 25, 10);
     if(thread != RT_NULL)
     {
         rt_thread_startup(thread);

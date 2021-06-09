@@ -58,21 +58,21 @@ public:
   }
 
   // these refer to the subscriber
-  virtual void callback(unsigned char *data) override
+  virtual void callback(unsigned char *data)
   {
     req.deserialize(data);
     (obj_->*cb_)(req, resp);
     pub.publish(&resp);
   }
-  virtual const char * getMsgType() override
+  virtual const char * getMsgType()
   {
     return this->req.getType();
   }
-  virtual const char * getMsgMD5() override
+  virtual const char * getMsgMD5()
   {
     return this->req.getMD5();
   }
-  virtual int getEndpointType() override
+  virtual int getEndpointType()
   {
     return rosserial_msgs::TopicInfo::ID_SERVICE_SERVER + rosserial_msgs::TopicInfo::ID_SUBSCRIBER;
   }
@@ -99,21 +99,21 @@ public:
   }
 
   // these refer to the subscriber
-  virtual void callback(unsigned char *data) override
+  virtual void callback(unsigned char *data)
   {
     req.deserialize(data);
     cb_(req, resp);
     pub.publish(&resp);
   }
-  virtual const char * getMsgType() override
+  virtual const char * getMsgType()
   {
     return this->req.getType();
   }
-  virtual const char * getMsgMD5() override
+  virtual const char * getMsgMD5()
   {
     return this->req.getMD5();
   }
-  virtual int getEndpointType() override
+  virtual int getEndpointType()
   {
     return rosserial_msgs::TopicInfo::ID_SERVICE_SERVER + rosserial_msgs::TopicInfo::ID_SUBSCRIBER;
   }
