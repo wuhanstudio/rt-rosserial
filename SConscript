@@ -42,6 +42,9 @@ if GetDepend('ROSSERIAL_USING_SERVICE_CLIENT_UART'):
 if GetDepend('ROSSERIAL_USING_HELLO_WORLD_TCP'):
     src    += Glob('examples/hello_world_tcp.cpp')
 
+if GetDepend('ROSSERIAL_USING_KOBUKI_CONTROL'):
+    src    += Glob('examples/kobuki_control.cpp')
+
 if rtconfig.CROSS_TOOL == 'gcc':
     LOCAL_CCFLAGS += ' -std=c99'
 
