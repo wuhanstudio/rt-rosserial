@@ -80,7 +80,7 @@ class RTTHardware {
 
     protected:
         long baud_;
-        char* deviceName_;
+        const char* deviceName_;
 };
 
 #endif
