@@ -46,17 +46,17 @@ class RTTHardware {
 
             /* Initialize Semaphore */
             rt_sem_init(&rx_sem, "rx_sem", 0, RT_IPC_FLAG_FIFO);
-            /* Open Serial */
-            rt_device_open(serial, RT_DEVICE_FLAG_INT_RX);
-            /* Set RX Callback */
-            rt_device_set_rx_indicate(serial, uart_input);
-
+            /* config Serial */
             struct serial_configure config = RT_SERIAL_CONFIG_DEFAULT;
             config.baud_rate = this->baud_;
             config.data_bits = DATA_BITS_8;
             config.stop_bits = STOP_BITS_1;
             config.parity    = PARITY_NONE;
             rt_device_control(serial, RT_DEVICE_CTRL_CONFIG, &config);
+            /* Open Serial */
+            rt_device_open(serial, RT_DEVICE_FLAG_INT_RX);
+            /* Set RX Callback */
+            rt_device_set_rx_indicate(serial, uart_input);
         }
 
         int read() {
